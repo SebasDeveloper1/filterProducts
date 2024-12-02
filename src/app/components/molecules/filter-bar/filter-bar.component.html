@@ -1,1 +1,14 @@
-<p>filter-bar works!</p>
+<div class="w-full">
+  <span class="span-1 text-sky-400 font-medium">Filtar por usuario: </span>
+  <div class="inline-flex items-center gap-4 w-full">
+    <app-dropdown
+      [options]="categories"
+      [placeholder]="'Selecciona un usuario'"
+      [changeCtrl]="categoryCtrl"
+    ></app-dropdown>
+    <app-button
+      [label]="'Aplicar filtro'"
+      (onClick)="applyFilter()"
+    ></app-button>
+  </div>
+</div>

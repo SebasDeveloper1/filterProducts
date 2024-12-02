@@ -1,1 +1,36 @@
-<p>filter works!</p>
+<div class="flex flex-col justify-center items-center w-full">
+  <header class="w-full min-h-[15vh] p-8 bg-slate-900">
+    <div class="flex justify-center items-center">
+      <app-filter-bar
+        [categories]="categories"
+        (filter)="applyFilter($event)"
+      ></app-filter-bar>
+    </div>
+  </header>
+
+  <main class="w-11/12 py-16">
+    <div class="flex flex-col justify-center items-center gap-8 w-full">
+      <!-- Mostrar el loader mientras los datos están cargando -->
+      <div class="" *ngIf="loading">
+        <span class="">Cargando...</span>
+      </div>
+
+      <!-- Mostrar un mensaje si no hay publicaciones de este usuario -->
+      <div *ngIf="filteredPosts.length === 0 && !loading">
+        No hay publicaciones de este usuario
+      </div>
+
+      <h2 class="heading-3 w-full">
+        Publicaciones <span>({{ filteredPosts.length }})</span>
+      </h2>
+
+      <!-- Mostrar los posts cuando haya publicaciones -->
+      <ul
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        *ngIf="filteredPosts.length > 0 && !loading"
+      >
+        <app-post *ngFor="let post of filteredPosts" [post]="post"> </app-post>
+      </ul>
+    </div>
+  </main>
+</div>

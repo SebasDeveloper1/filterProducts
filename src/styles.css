@@ -2,3 +2,74 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-slate-50 text-slate-950;
+}
+
+/* ================================
+UTILITY CLASSES
+================================ */
+@layer utilities {
+  /* Custom utility class for focus styles */
+  .focus {
+    @apply focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+  }
+}
+
+/* ================================
+COMPONENT STYLES
+================================ */
+
+@layer components {
+  /* Heading styles */
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl tracking-tight;
+  }
+  .heading-2 {
+    @apply text-4xl sm:text-5xl tracking-tight;
+  }
+  .heading-3 {
+    @apply text-3xl sm:text-4xl tracking-tight;
+  }
+  .heading-4 {
+    @apply text-2xl sm:text-3xl tracking-tight;
+  }
+  .heading-5 {
+    @apply text-xl sm:text-2xl tracking-tight;
+  }
+  .heading-6 {
+    @apply text-lg sm:text-xl tracking-tight;
+  }
+
+  /* Paragraph styles */
+  .paragraph-xl {
+    @apply text-xl tracking-tight;
+  }
+  .paragraph-lg {
+    @apply text-lg tracking-tight;
+  }
+  .paragraph-base {
+    @apply text-base tracking-tight;
+  }
+  .paragraph-sm {
+    @apply text-sm tracking-tight;
+  }
+  .paragraph-xs {
+    @apply text-xs tracking-tight;
+  }
+
+  /* Button styles */
+  .button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl text-base font-medium;
+  }
+  .padding-button {
+    @apply py-2 px-6;
+  }
+  .padding-icon {
+    @apply p-2.5;
+  }
+  .button-primary {
+    @apply button text-slate-100 hover:text-slate-50 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 disabled:bg-blue-100 disabled:text-blue-400 transition-colors focus;
+  }
+}
