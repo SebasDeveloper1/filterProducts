@@ -1,3 +1,9 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { FilterPageComponent } from './pages/filter-page/filter-page.component';
+export const routes: Routes = [
+  {
+    path: '',
+    component: FilterPageComponent,
+  },
+];
